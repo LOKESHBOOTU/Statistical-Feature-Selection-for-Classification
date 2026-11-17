@@ -101,6 +101,12 @@ On macOS or Linux, activate with `source .venv/bin/activate`. Open `Statistical_
 4. **Select features**  
    Remove zero-variance features, rank the remaining features by Fisher score, and drop a feature if its absolute correlation with a higher-ranked kept feature exceeds 0.90. The pipeline tunes the number of selected features from 10, 15, or 20.
 
+### Selected Features Ranked by Fisher Score
+
+The chart shows the selected features in Fisher-score order.
+
+![Selected features ranked by Fisher score](README_assets/selected_features_fisher_score.png)
+
 5. **Train and compare models**  
    Compare all-feature and selected-feature pipelines for each classifier. Repeated stratified cross-validation uses 5 folds and 3 repeats; grid search tunes a small set of classifier settings.
 
@@ -133,6 +139,10 @@ The following are the notebook's recorded results on its 114-sample held-out tes
 | Statistical selection | Decision Tree | 0.8947 | 0.8409 | 0.8810 | 0.8605 |
 | Statistical selection | K-Nearest Neighbors | 0.9561 | 0.9302 | 0.9524 | 0.9412 |
 
+### Test Accuracy Before and After Feature Selection
+
+![Test accuracy before and after feature selection](README_assets/test_accuracy_before_after_selection.png)
+
 **Selected model:** Logistic Regression with 15 features  
 **Training cross-validation F1 (malignant):** 0.9607  
 **False negatives in the recorded test evaluation:** 2
@@ -143,7 +153,11 @@ These values describe one run and one held-out split; small differences may be d
 
 The notebook builds a Gradio dashboard with sections for Overview, Statistical Analysis, Feature Selection, Model Evaluation, Comparison, and Prediction. The prediction section accepts individual measurements or a CSV containing the original 30 feature columns.
 
-The dashboard share link produced by a notebook run is temporary. No separate screenshot assets are currently included in the repository.
+The final Model Evaluation output includes the selected model's test metrics and confusion matrix:
+
+![Final test-set results and confusion matrix](README_assets/final_test_results_confusion_matrix.png)
+
+The dashboard share link produced by a notebook run is temporary.
 
 ## 🚀 Features
 
