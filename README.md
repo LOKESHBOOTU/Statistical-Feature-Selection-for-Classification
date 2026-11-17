@@ -56,6 +56,10 @@ The notebook treats malignant cases as the positive class when reporting precisi
 ```text
 .
 |-- README.md
+|-- README_assets/
+|   |-- final_test_results_confusion_matrix.png
+|   |-- selected_features_fisher_score.png
+|   `-- test_accuracy_before_after_selection.png
 `-- Statistical_Feature_Selection_Breast_Cancer_Final.ipynb
 ```
 
